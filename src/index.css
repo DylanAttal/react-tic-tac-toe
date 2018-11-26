@@ -1,14 +1,103 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+html {
+  font: 16px / 1 sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  margin: 0;
+  font-family: 'Permanent Marker', cursive;
+  background-color: #f7f0da;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Turn off the margin and padding for everything */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  padding: 1rem 0;
+  font-size: 6rem;
+  text-align: center;
+}
+
+h2 {
+  padding: 1rem 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  width: 450px;
+  height: 450px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 32px auto 64px auto;
+}
+
+.square {
+  height: 150px;
+  width: 150px;
+  box-sizing: border-box;
+  border: 5px solid rgb(0, 0, 0);
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: orange;
+  cursor: not-allowed;
+  transition: font-size 0.7s cubic-bezier(0.43, 1.93, 0.66, 1);
+}
+
+.square:empty {
+  cursor: pointer;
+  font-size: 0;
+}
+
+/* Delete certain borders from certain squares to get the board
+in the shape of a hashtag */
+.square:nth-child(1) {
+  border-top: none;
+  border-left: none;
+}
+
+.square:nth-child(2) {
+  border-top: none;
+}
+
+.square:nth-child(3) {
+  border-top: none;
+  border-right: none;
+}
+
+.square:nth-child(4) {
+  border-left: none;
+}
+
+.square:nth-child(6) {
+  border-right: none;
+}
+
+.square:nth-child(7) {
+  border-bottom: none;
+  border-left: none;
+}
+
+.square:nth-child(8) {
+  border-bottom: none;
+}
+
+.square:nth-child(9) {
+  border-bottom: none;
+  border-right: none;
+}
+
+.true {
+  color: blue;
 }
